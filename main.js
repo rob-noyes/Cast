@@ -1,1 +1,1 @@
-console.log("Hello World");
+(()=>{"use strict";(async function(){try{const a=await fetch("https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&units=imperial&appid=1f82bf42f57863a5a2f579cecc0bdac0"),o=await a.json();console.log(o)}catch(a){console.log(a)}})(),console.log("Hello World")})();
