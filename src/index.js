@@ -1,5 +1,5 @@
-import displayData from './modules/getContent'
+import displayWeather from './modules/getContent';
 
-displayData()
+displayWeather();
 
-console.log('Hello World')
+console.log('Hello World');
