@@ -3,10 +3,12 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   letter-spacing: 0.2rem;
+  font-weight: 100;
 }
 body {
   width: 100%;
   height: 100%;
+  background: rgb(210, 248, 255);
 }
 body > section {
   min-height: 100vh;
@@ -21,12 +23,12 @@ body > section {
 .inputCity h2 {
   padding: 1rem;
   font-size: 2.5rem;
+  font-weight: 500;
 }
 
 #temp {
   font-weight: 600;
   font-size: 4.5rem;
-  padding-bottom: 1rem;
 }
 
 input {
@@ -43,6 +45,81 @@ input {
 input:focus {
   outline: none;
 }
-span {
+
+#date,
+#time {
   letter-spacing: 0.1rem;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+#date {
+  padding: 0.5rem;
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.toggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  padding: 1rem;
+}
+
+.slider {
+  border: 1px solid black;
+  border-radius: 2rem;
+  box-shadow: 0rem 0.1rem 0.5rem gray;
+  padding: 0.4rem;
+}
+
+#switch {
+  display: none;
+}
+
+#feelsLike {
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.tempToggle {
+  border-radius: 1rem;
+  border: 0;
+  background: rgb(80, 80, 80);
+  color: aliceblue;
+  font-size: 20px;
+  text-align: center;
+  width: 10rem;
+  font-weight: 300;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+
+.columns > .celcius {
+  border-radius: 1rem;
+  border: 0;
+  background: rgb(223, 223, 223);
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  text-align: center;
+  width: 10rem;
+  font-weight: 300;
+  padding: 0.3rem;
+}
+
+#min,
+#max {
+  font-size: 22px;
+  padding: 0.5rem;
+  font-style: italic;
 }
