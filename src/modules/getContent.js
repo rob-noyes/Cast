@@ -28,14 +28,29 @@ function displayWeather() {
   function displayData(data) {
     console.log(data);
     const location = document.querySelector('#location');
-    const temp = document.querySelector('#temp');
+    let temp = document.querySelector('#temp');
     const date = document.querySelector('#date');
     const time = document.querySelector('#time');
     const today = new Date();
+    const feelsLike = document.querySelector('#feelsLike');
+    const min = document.querySelector('#min');
+    const max = document.querySelector('#max');
+
+    let tempFmin = Math.round(((data.main.temp_min - 273.15) * 9) / 5 + 32);
+
+    let tempFmax = Math.round(((data.main.temp_max - 273.15) * 9) / 5 + 32);
+
+    min.innerHTML = `${tempFmin}°F`;
+    max.innerHTML = `${tempFmax}°F`;
 
     location.innerHTML = data.name;
+
     temp.innerHTML = `${Math.round(
       ((data.main.temp - 273.15) * 9) / 5 + 32
+    )}°F`;
+
+    feelsLike.innerHTML = `Feels Like: ${Math.round(
+      ((data.main.feels_like - 273.15) * 9) / 5 + 32
     )}°F`;
 
     date.innerHTML = `${
@@ -43,23 +58,16 @@ function displayWeather() {
     }/${today.getDate()}/${today.getFullYear()}`;
 
     let hours = today.getHours();
+    let ampm = hours >= 12 ? 'pm' : 'am';
     hours = hours % 12;
     hours = hours ? hours : 12;
     let minutes = today.getUTCMinutes();
     if (minutes < 10) {
       minutes = `0${minutes}`;
     }
-    time.innerHTML = `${hours}:${minutes}`;
+    time.innerHTML = `${hours}:${minutes} ${ampm}`;
   }
 
-  function getInputLocation() {
-    let loc = document.querySelector('#getLocation');
-    if (loc.value === null) {
-      alert('Please enter a location');
-    } else {
-      return loc.value;
-    }
-  }
   getWeather(input);
 }
 
